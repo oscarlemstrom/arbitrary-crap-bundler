@@ -1,0 +1,20 @@
+
+# ====
+# IDE SPECIFIC IGNORES
+# ====
+
+*.iml
+.idea/
+
+# ====
+# JS SPECIFIC IGNORES
+# ====
+
+node_modules/
+npm-debug.log
+
+# ====
+# PROJECT SPECIFIC IGNORES
+# ====
+
+build/

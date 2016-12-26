@@ -1,0 +1,24 @@
+{
+  "name": "ac-bundler",
+  "version": "0.1.0",
+  "description": "Arbirtrary text file bundler with treeshaking",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscarlemstrom/ac-bundler.git"
+  },
+  "author": "Oscar Lemström",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oscarlemstrom/ac-bundler/issues"
+  },
+  "homepage": "https://github.com/oscarlemstrom/ac-bundler#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^2.1.4"
+  }
+}

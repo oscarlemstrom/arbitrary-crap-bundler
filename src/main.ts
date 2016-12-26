@@ -1,4 +1,6 @@
 import { Tree, Node } from './dependency-tree';
+import * as Imports from './import-parser';
+
 
 const dependencyTree = new Tree<string>();
 
@@ -17,3 +19,18 @@ node1_2.connect(node2_1);
 
 dependencyTree.setRoot(rootNode);
 console.log(JSON.stringify(dependencyTree.uniques(), null, 4));
+
+// TEST FILE
+const testFile = `
+    [#import a.ftl]
+    [#import b.ftl]
+    
+    [#function moi]
+        [#return]
+        
+        [#import c.ftl]
+    [/#function]
+
+`;
+
+console.log(Imports.freemarker(testFile));

@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/oscarlemstrom/ac-bundler#readme",
   "dependencies": {
+    "commander": "^2.9.0",
     "es6-promisify": "^5.0.0"
   },
   "devDependencies": {

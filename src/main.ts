@@ -1,6 +1,8 @@
 import { Tree, Node } from './dependency-tree';
 import * as Imports from './import-parser';
-
+import * as path from 'path';
+import { uniqueOnly } from './utils';
+import {reverse} from "dns";
 
 const dependencyTree = new Tree<string>();
 
@@ -33,4 +35,11 @@ const testFile = `
 
 `;
 
-console.log(Imports.freemarker(testFile));
+const allDeps = Imports.crawlFiles(path.resolve(__dirname, '../src/test/freemarker/entry.ftl'), Imports.freemarker)
+    .filter(uniqueOnly)
+    .reverse()
+    .map(file => {
+        return Imports.freemarkerImports(file).reduce((file, statement) => file.replace(statement, ''), file);
+    })
+
+console.log(Imports.concatFiles(allDeps));

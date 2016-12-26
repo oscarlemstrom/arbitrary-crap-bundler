@@ -18,8 +18,11 @@
     "url": "https://github.com/oscarlemstrom/ac-bundler/issues"
   },
   "homepage": "https://github.com/oscarlemstrom/ac-bundler#readme",
-  "dependencies": {},
+  "dependencies": {
+    "es6-promisify": "^5.0.0"
+  },
   "devDependencies": {
+    "@types/node": "^6.0.53",
     "typescript": "^2.1.4"
   }
 }

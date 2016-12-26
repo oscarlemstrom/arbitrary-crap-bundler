@@ -1,3 +1,5 @@
+import { uniqueOnly } from './utils';
+
 export interface INode<T>  {
     connect(n: INode<T>): void;
     disconnect(n: INode<T>): void;
@@ -12,10 +14,12 @@ export interface ITree<T> {
     maxDepth: number;
 }
 
-const uniqueOnly = (value, index, all) => all.indexOf(value) === index;
-
 export class Tree<T> implements ITree<T> {
     private root: INode<T>;
+
+    get rootNode() {
+        return this.root;
+    }
 
     setRoot(n: INode<T>) {
         this.root = n;

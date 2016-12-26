@@ -8,32 +8,32 @@ export interface INode<T>  {
     value: T;
 }
 
-export interface ITree<T> {
-    setRoot(n: INode<T>): void;
-    uniques(): T[];
-    maxDepth: number;
-}
+const flattenArrayTree = (root: any[], flat = []) => {
+    root.forEach(node => {
+        if(typeof node === 'string') flat.push(node);
+        else if(Array.isArray(node)) {
+            return flattenArrayTree(node, flat);
+        }
+    });
 
-export class Tree<T> implements ITree<T> {
-    private root: INode<T>;
+    return flat;
+};
+
+export class FileNameTree {
+    private root: string[];
 
     get rootNode() {
         return this.root;
     }
 
-    setRoot(n: INode<T>) {
-        this.root = n;
+    setRoot(root: string[]) {
+        this.root = root;
     }
 
-    uniques(): T[] {
-        const values: T[] = [];
+    uniques(): string[] {
+        const values: string[] = [];
         if(!this.root) return values;
-        return this.root.flatten().filter(uniqueOnly);
-    }
-
-    get maxDepth(): number {
-        if(!this.root) return 0;
-        return this.root.depth();
+        return flattenArrayTree(this.root).reverse().filter(uniqueOnly);
     }
 }
 

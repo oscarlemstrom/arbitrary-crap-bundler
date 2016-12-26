@@ -4,6 +4,7 @@
   "description": "Arbirtrary text file bundler with treeshaking",
   "main": "main.js",
   "scripts": {
+    "start": "npm run build && node ./build/main",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },

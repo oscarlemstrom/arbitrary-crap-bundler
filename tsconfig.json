@@ -4,7 +4,8 @@
         "target": "es6",
         "noImplicitAny": false,
         "sourceMap": true,
-        "outDir": "./build",
+        "declaration": true,
+        "outDir": "./dist",
         "lib": ["es2016", "dom"]
     },
     "include": ["src/**/*.ts"]

@@ -29,6 +29,14 @@ const saveOutput = (outputObj: any, outputPath: string) => {
     })
 };
 
+export const bundle = (entrypoints: string[], outputFolder: string) => {
+    const output = entrypoints.reduce((obj, entry) => {
+        obj[entry] = createOutput(entry);
+        return obj;
+    }, {});
+
+    saveOutput(output, outputFolder);
+};
 
 cli
     .version('0.1.0')
@@ -37,14 +45,6 @@ cli
     .option('-o, --output', 'Folder for the outputed files')
     .action((outputPath, entry, ...args) => {
         const entries = [entry].concat(args.filter(a => typeof a === 'string'));
-
-        const output = entries.reduce((obj, entry) => {
-            obj[entry] = createOutput(entry);
-            return obj;
-        }, {});
-
-        saveOutput(output, outputPath);
-        console.log(output);
-
+        bundle(entries, outputPath);
     })
     .parse(process.argv);

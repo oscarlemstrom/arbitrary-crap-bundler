@@ -2,28 +2,30 @@
   "name": "ac-bundler",
   "version": "0.1.0",
   "description": "Arbirtrary text file bundler with treeshaking",
-  "main": "main.js",
+  "main": "./dist/index",
+  "typings": "./src/index",
   "scripts": {
-    "start": "npm run build && node ./build/main",
+    "start": "npm run build && node ./dist/index",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oscarlemstrom/ac-bundler.git"
+    "url": "git+https://github.com/oscarlemstrom/arbitrary-crap-bundler.git"
   },
   "author": "Oscar Lemström",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/oscarlemstrom/ac-bundler/issues"
+    "url": "https://github.com/oscarlemstrom/arbitrary-crap-bundler/issues"
   },
-  "homepage": "https://github.com/oscarlemstrom/ac-bundler#readme",
+  "homepage": "https://github.com/oscarlemstrom/arbitrary-crap-bundler#readme",
   "dependencies": {
     "commander": "^2.9.0",
     "es6-promisify": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^6.0.53",
-    "typescript": "^2.1.4"
+    "typescript": "^2.1.4",
+    "ac-bundler": "oscarlemstrom/arbitrary-crap-bundler"
   }
 }

@@ -8,5 +8,6 @@
         "outDir": "./dist",
         "lib": ["es2016", "dom"]
     },
-    "include": ["src/**/*.ts"]
+    "include": ["src/**/*.ts"],
+    "ignore": ["node_modules/"]
 }

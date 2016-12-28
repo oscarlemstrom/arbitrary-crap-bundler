@@ -6,7 +6,7 @@
   "typings": "./src/index",
   "scripts": {
     "start": "npm run build && node ./dist/index",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tsc --module commonjs --target es6 --lib es2016 ./test/*.ts && mocha",
     "build": "tsc"
   },
   "repository": {
@@ -24,8 +24,13 @@
     "es6-promisify": "^5.0.0"
   },
   "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.35",
     "@types/node": "^6.0.53",
-    "typescript": "^2.1.4",
-    "ac-bundler": "oscarlemstrom/arbitrary-crap-bundler"
+    "ac-bundler": "oscarlemstrom/arbitrary-crap-bundler",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "ts-node": "^1.7.3",
+    "typescript": "^2.1.4"
   }
 }

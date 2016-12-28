@@ -24,12 +24,25 @@ Bundles arbitrary text files and removes duplicates before concatenation
 ### Javascript
 ```javascript
 var bundler = require('ac-bundler');
-bundler.bundle(['./files/entrypoint1', './files/entrypoint2'], './files/output-folder/');
+var path = require('path');
+
+var entrypoints = ['./files/entrypoint1', './files/entrypoint2']
+    .map(function() {
+        return path.resolve(__dirname, entry);
+    });
+
+bundler.bundle(, './files/output-folder/');
 ```
 
 ### Typescript
 ```typescript
 import * as bundler from 'ac-bundler';
-bundler.bundle(['./files/entrypoint1', './files/entrypoint2'], './files/output-folder/');
+import * as path from 'path';
+
+const entrypoints = ['./files/entrypoint1', './files/entrypoint2']
+    .map(entry => path.resolve(__dirname, entry));
+const output = path.resolve(__dirname, './files/output/');
+
+bundler.bundle(entrypoints, output);
 ```
 
